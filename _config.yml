@@ -18,3 +18,4 @@ github_username:  AshwinC313
 
 # Build settings
 markdown: kramdown
+theme: jekyll-theme-cayman
