@@ -1,2 +1,3 @@
 name: Ashwin Chakravartula, MSc. Robotic Systems Engineering @ RWTH Aachen
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
