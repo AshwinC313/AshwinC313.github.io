@@ -4,313 +4,187 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ashwin Chakravartula</title>
-
-  <!-- Favicon -->
   <link rel="icon" type="image/jpg" href="images/github_profile_photo_3.jpg" />
-
-  <!-- Bootstrap 5 (modern + mobile-first) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
-
   <style>
-body {font-family: Inter, system-ui; background: #f7f7f7; color:#1f2937;}
-.content-wrap {max-width: 980px;}
-.soft-card {background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:18px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
-.link-row a {text-decoration:none;font-weight:600;}
-.link-icon {font-size:1.6rem;color:#0d6efd;transition:transform .2s ease, color .2s ease;}
-.link-icon:hover {transform:scale(1.15);color:#0a58ca;}
-@media(prefers-color-scheme:dark){body{background:#0b0c0f;color:#e5e7eb;} .soft-card{background:#111318;border-color:rgba(255,255,255,.08);} .link-icon{color:#9cc2ff;} .link-icon:hover{color:#fff;}}
+    :root {
+      --bg: #ffffff;
+      --text: #111827; /* gray-900 */
+      --muted: #4b5563; /* gray-600 */
+      --rule: #e5e7eb;  /* gray-200 */
+      --link: #2563eb; /* blue-600 */
+    }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; background: var(--bg); color: var(--text); }
+
+    /* Container mimicking jonbarron.info's clean single-column width */
+    .wrap { max-width: 900px; margin: 0 auto; padding: 24px 16px; }
+
+    /* Header: name + short blurb with photo to the right on wide screens */
+    header { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: center; }
+    @media (min-width: 900px) {
+      header { grid-template-columns: 1fr 220px; }
+    }
+
+    h1 { font-size: clamp(1.8rem, 1.2rem + 2vw, 2.4rem); margin: 0 0 8px 0; font-weight: 700; letter-spacing: -0.01em; }
+    h2 { font-size: clamp(1.2rem, 1rem + 1vw, 1.5rem); margin: 0 0 12px 0; font-weight: 700; }
+    p { margin: 0 0 12px 0; line-height: 1.7; }
+    .muted { color: var(--muted); }
+
+    /* Links row under the name */
+    .links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 6px 0 0; }
+    .links a { color: var(--link); text-decoration: none; font-weight: 600; }
+    .links .dot { color: #9ca3af; }
+
+    /* Icon badges */
+    .icon-badges { display: flex; gap: 14px; align-items: center; }
+    .icon-badges a { display: inline-flex; width: 38px; height: 38px; border-radius: 999px; align-items: center; justify-content: center; text-decoration: none; background: #eef2ff; transition: transform .15s ease, background .2s ease; }
+    .icon-badges a i { font-size: 1.25rem; color: #1f2937; }
+    .icon-badges a:hover { transform: translateY(-2px); background: #e0e7ff; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0b0c0f; color: #e5e7eb; }
+      .muted { color: #9aa2b2; }
+      .icon-badges a { background: #1f2937; }
+      .icon-badges a i { color: #e5e7eb; }
+      .icon-badges a:hover { background: #374151; }
+      .rule { border-color: rgba(255,255,255,.12); }
+      a { color: #93c5fd; }
+    }
+
+    /* Photo */
+    .photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; justify-self: center; }
+    @media (min-width: 900px) { .photo { justify-self: end; } }
+
+    /* Rules and section spacing similar to jonbarron.info */
+    .rule { border: 0; border-top: 1px solid var(--rule); margin: 22px 0; }
+    section { margin: 22px 0 10px; }
+
+    /* Lists */
+    ul { padding-left: 18px; margin: 0; }
+    li { margin: 6px 0; }
+
+    footer { text-align: center; color: #9ca3af; font-size: .95rem; padding: 18px 0 12px; }
   </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-md bg-body-tertiary sticky-top border-bottom">
-<div class="container content-wrap">
-<a class="navbar-brand fw-bold" href="#top">Ashwin Chakravartula</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="nav">
-<ul class="navbar-nav ms-auto mb-2 mb-md-0">
-<li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-<li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-<li class="nav-item"><a class="nav-link" href="#coursework">Certifications</a></li>
-<li class="nav-item"><a class="nav-link" href="data/ashwin_lebenslauf_nov.pdf" target="_blank" rel="noopener">CV</a></li>
-</ul>
-</div>
-</div>
-</nav>
-<main id="top" class="container content-wrap py-5">
-<header class="soft-card p-4 p-md-5 mb-4 text-center">
-<img src="images/github_profile_photo_3.jpg" alt="Ashwin Chakravartula" class="rounded-circle mb-3" width="300" height="300"/>
-<h1 class="mb-2">Ashwin Chakravartula</h1>
-<p class="lead mb-4">MSc. Robotic Systems Engineering @ RWTH Aachen University | Navigation · Autonomous Mobility · Reinforcement Learning</p>
-<div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
-<a href="mailto:ashwin.chakravartula@rwth-aachen.de" class="btn btn-primary btn-sm">Email</a>
-<a href="https://github.com/AshwinC313" target="_blank" rel="noopener" class="link-icon" aria-label="GitHub"><i class="bi bi-github"></i></a>
-<a href="https://www.linkedin.com/in/ashwin-c-0548a5196/" target="_blank" rel="noopener" class="link-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-<a href="data/ashwin_lebenslauf_nov.pdf" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm">CV</a>
-</div>
-</header>
-
-    <!-- News -->
-    <section id="news" class="section-gap">
-      <h2 class="mb-3">News</h2>
-      <div class="soft-card p-3 p-md-4">
-        <ul class="list-unstyled mb-0">
-          <li class="mb-2"><span class="chip me-2">Jul ’25</span> Started working as a Student Assistant @ <a href="https://www.amt.rwth-aachen.de/en/home.html" target="_blank" rel="noopener">Institute of Advanced Mining Technologies, RWTH Aachen</a>.</li>
-          <li class="mb-2"><span class="chip me-2">Mar ’25</span> Started working as a Project Student @ <a href="https://www.iaw.rwth-aachen.de/cms/~ieplw/iaw/" target="_blank" rel="noopener">Institut für Arbeitswissenschaft, RWTH Aachen</a>.</li>
-          <li class="mb-2"><span class="chip me-2">Jan ’24</span> Student Assistant @ <a href="https://www.mmp.rwth-aachen.de/cms/Mechatronics/~fwqq/Das-Lehr-und-Forschungsgebiet/lidx/1/" target="_blank" rel="noopener">MMP, RWTH Aachen</a>.</li>
-          <li class="mb-2"><span class="chip me-2">Oct ’23</span> Started MSc. Robotic Systems Engineering @ <a href="https://www.rwth-aachen.de/go/id/a/?lidx=1" target="_blank" rel="noopener">RWTH Aachen University</a>.</li>
-          <li class="mb-2"><span class="chip me-2">Jan ’23</span> Internship @ <a href="https://www.mbrdi.co.in/#/" target="_blank" rel="noopener">Mercedes‑Benz Research and Development, India</a>.</li>
-          <li class="mb-1"><span class="chip me-2">May ’22</span> Internship @ <a href="https://www.wastefullinsights.com/" target="_blank" rel="noopener">Wastefull Insights, LLP</a>.</li>
-        </ul>
+  <div class="wrap">
+    <header id="top">
+      <div>
+        <h1>Ashwin Chakravartula</h1>
+        <p class="muted">MSc. Robotic Systems Engineering @ RWTH Aachen University. Interests: <strong>Navigation</strong>, <strong>Autonomous Mobility</strong>, and <strong>Reinforcement Learning for Robots</strong>.</p>
+        <div class="links">
+          <a href="#experience">Experience</a><span class="dot">·</span>
+          <a href="#projects">Projects</a><span class="dot">·</span>
+          <a href="#coursework">Certifications</a><span class="dot">·</span>
+          <a href="data/ashwin_lebenslauf_nov.pdf" target="_blank" rel="noopener">CV</a>
+        </div>
+        <div class="links" style="margin-top:10px;">
+          <a href="mailto:ashwin.chakravartula@rwth-aachen.de">ashwin.chakravartula@rwth-aachen.de</a>
+          <span class="dot">·</span>
+          <div class="icon-badges">
+            <a href="https://github.com/AshwinC313" aria-label="GitHub" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/ashwin-c-0548a5196/" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
       </div>
+      <img class="photo" src="images/github_profile_photo_3.jpg" alt="Portrait of Ashwin Chakravartula" loading="lazy"/>
+    </header>
+
+    <hr class="rule"/>
+
+    <section id="news">
+      <h2>News</h2>
+      <ul>
+        <li><strong>Jul ’25:</strong> Student Assistant @ <a href="https://www.amt.rwth-aachen.de/en/home.html" target="_blank" rel="noopener">Institute of Advanced Mining Technologies, RWTH Aachen</a>.</li>
+        <li><strong>Mar ’25:</strong> Project Student @ <a href="https://www.iaw.rwth-aachen.de/cms/~ieplw/iaw/" target="_blank" rel="noopener">Institut für Arbeitswissenschaft, RWTH Aachen</a>.</li>
+        <li><strong>Jan ’24:</strong> Student Assistant @ <a href="https://www.mmp.rwth-aachen.de/cms/Mechatronics/~fwqq/Das-Lehr-und-Forschungsgebiet/lidx/1/" target="_blank" rel="noopener">MMP, RWTH Aachen</a>.</li>
+        <li><strong>Oct ’23:</strong> Started MSc. Robotic Systems Engineering @ <a href="https://www.rwth-aachen.de/go/id/a/?lidx=1" target="_blank" rel="noopener">RWTH Aachen University</a>.</li>
+        <li><strong>Jan ’23:</strong> Internship @ <a href="https://www.mbrdi.co.in/#/" target="_blank" rel="noopener">Mercedes‑Benz Research and Development, India</a>.</li>
+        <li><strong>May ’22:</strong> Internship @ <a href="https://www.wastefullinsights.com/" target="_blank" rel="noopener">Wastefull Insights, LLP</a>.</li>
+      </ul>
     </section>
 
-    <!-- Experience -->
-    <section id="experience" class="section-gap">
-      <h2 class="mb-3">Experience</h2>
-      <div class="vstack gap-4">
-        <!-- Item -->
-        <article class="soft-card p-3 p-md-4">
-          <div class="row g-3 g-md-4 align-items-start">
-            <div class="col-12 col-sm-3">
-              <img class="img-fluid rounded" src="images/doosan_robot_project.jpg" alt="Doosan robot project" loading="lazy" />
-            </div>
-            <div class="col-12 col-sm-9">
-              <h3 class="h5 mb-1">Project Student <span class="muted">| Industrial Engineering and Ergonomics Institute, RWTH Aachen</span></h3>
-              <div class="muted mb-2">Apr ’25 – Present</div>
-              <ul class="tight-list">
-                <li>Haptic demonstrator for teleoperative control of an industrial robot (grinding).</li>
-                <li>Unity‑based VR environment for immersive simulation.</li>
-                <li>ROS2 framework for Doosan M1013 (6‑DOF).</li>
-                <li>Waypoint generation from CAD part point clouds for grinding trajectories.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+    <hr class="rule"/>
 
-        <!-- Item -->
-        <article class="soft-card p-3 p-md-4">
-          <div class="row g-3 g-md-4 align-items-start">
-            <div class="col-12 col-sm-3">
-              <img class="img-fluid rounded" src="images/RWTH_Logo.jpg" alt="RWTH logo" loading="lazy" />
-            </div>
-            <div class="col-12 col-sm-9">
-              <h3 class="h5 mb-1">Student Assistant <span class="muted">| Mechatronics and Mobile Propulsion Institute, RWTH Aachen</span></h3>
-              <div class="muted mb-2">Jan ’24 – Sept ’24</div>
-              <p class="mb-2"><a href="https://github.com/AshwinC313/AshwinC313.github.io/blob/master/documents/ashwin_hiwi_zeugnis.pdf" target="_blank" rel="noopener">Experience Letter</a></p>
-              <ul class="tight-list">
-                <li>Algorithms for autonomous ship navigation.</li>
-                <li>Control allocation studies for USVs across thruster configs.</li>
-                <li>Trajectory planning in Gazebo (ROS1).</li>
-                <li>Sensor fusion of GPS + IMU; data synchronization.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+    <section id="experience">
+      <h2>Experience</h2>
+      <p><strong>Project Student</strong> | Industrial Engineering and Ergonomics Institute, RWTH Aachen <span class="muted">(Apr ’25 – Present)</span></p>
+      <ul>
+        <li>Haptic demonstrator for teleoperative robot grinding.</li>
+        <li>Unity‑based VR environment.</li>
+        <li>ROS2 framework for Doosan M1013 (6‑DOF).</li>
+        <li>Waypoint generation from CAD part point clouds.</li>
+      </ul>
 
-        <!-- Item -->
-        <article class="soft-card p-3 p-md-4">
-          <div class="row g-3 g-md-4 align-items-start">
-            <div class="col-12 col-sm-3">
-              <img class="img-fluid rounded" src="images/mercedes.png" alt="Mercedes‑Benz logo" loading="lazy" />
-            </div>
-            <div class="col-12 col-sm-9">
-              <h3 class="h5 mb-1">Student Intern <span class="muted">| Mercedes‑Benz Research and Development India</span></h3>
-              <div class="muted mb-2">Jan ’23 – Jun ’23</div>
-              <p class="mb-2"><a href="https://github.com/AshwinC313/AshwinC313.github.io/blob/master/documents/mercedes_benz_reference.pdf" target="_blank" rel="noopener">Internship Certificate</a></p>
-              <ul class="tight-list">
-                <li>Topography optimization to reduce springback in BIW parts.</li>
-                <li>Reviewed stiffness–springback relationships in sheet metal.</li>
-                <li>Modal analysis in HyperMesh; topography in Siemens NX.</li>
-                <li>Manufacturing feasibility simulations with AutoForm.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+      <p><strong>Student Assistant</strong> | Mechatronics and Mobile Propulsion Institute, RWTH Aachen <span class="muted">(Jan ’24 – Sept ’24)</span> — <a href="https://github.com/AshwinC313/AshwinC313.github.io/blob/master/documents/ashwin_hiwi_zeugnis.pdf" target="_blank" rel="noopener">Experience Letter</a></p>
+      <ul>
+        <li>Algorithms for autonomous ship navigation.</li>
+        <li>Control allocation studies for USVs.</li>
+        <li>Trajectory planning in Gazebo (ROS1).</li>
+        <li>Sensor fusion of GPS + IMU.</li>
+      </ul>
 
-        <!-- Item -->
-        <article class="soft-card p-3 p-md-4">
-          <div class="row g-3 g-md-4 align-items-start">
-            <div class="col-12 col-sm-3">
-              <img class="img-fluid rounded" src="images/wastefull.png" alt="Wastefull Insights logo" loading="lazy" />
-            </div>
-            <div class="col-12 col-sm-9">
-              <h3 class="h5 mb-1">Robotics Intern <span class="muted">| Wastefull Insights LLP</span></h3>
-              <div class="muted mb-2">Jun ’22 – Aug ’22</div>
-              <ul class="tight-list">
-                <li>Optimized scheduling to reduce pick time on a 3‑axis gantry.</li>
-                <li>Integrated software architecture with ROS1; wrote unit tests.</li>
-                <li>Created a Gazebo digital twin of the robot environment.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+      <p><strong>Student Intern</strong> | Mercedes‑Benz Research and Development India <span class="muted">(Jan ’23 – Jun ’23)</span> — <a href="https://github.com/AshwinC313/AshwinC313.github.io/blob/master/documents/mercedes_benz_reference.pdf" target="_blank" rel="noopener">Internship Certificate</a></p>
+      <ul>
+        <li>Topography optimization to reduce springback (BIW parts).</li>
+        <li>Reviewed stiffness–springback in sheet metal.</li>
+        <li>Modal analysis (HyperMesh), topography (Siemens NX).</li>
+        <li>Manufacturing feasibility (AutoForm).</li>
+      </ul>
 
-        <!-- Item -->
-        <article class="soft-card p-3 p-md-4">
-          <div class="row g-3 g-md-4 align-items-start">
-            <div class="col-12 col-sm-3">
-              <img class="img-fluid rounded" src="images/BITS.png" alt="BITS Pilani logo" loading="lazy" />
-            </div>
-            <div class="col-12 col-sm-9">
-              <h3 class="h5 mb-1">Research Assistant <span class="muted">| BITS Pilani</span></h3>
-              <div class="muted mb-2">Aug ’22 – Dec ’22</div>
-              <ul class="tight-list">
-                <li>Modeled cable‑driven continuum robots (with Prof. Ashwin KP).</li>
-                <li>Studied multi‑agent navigation via Artificial Potential Functions (with Prof. Rakesh Warier).</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-      </div>
+      <p><strong>Robotics Intern</strong> | Wastefull Insights LLP <span class="muted">(Jun ’22 – Aug ’22)</span></p>
+      <ul>
+        <li>Optimized scheduling to reduce pick time on 3‑axis gantry.</li>
+        <li>Integrated ROS1; unit tests.</li>
+        <li>Gazebo digital twin of the environment.</li>
+      </ul>
+
+      <p><strong>Research Assistant</strong> | BITS Pilani <span class="muted">(Aug ’22 – Dec ’22)</span></p>
+      <ul>
+        <li>Modeled cable‑driven continuum robots (with Prof. Ashwin KP).</li>
+        <li>Studied multi‑agent navigation via APF (with Prof. Rakesh Warier).</li>
+      </ul>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section-gap">
-      <h2 class="mb-3">Projects</h2>
-      <div class="vstack gap-4">
-        <!-- Project -->
-        <article class="soft-card p-3 p-md-4">
-          <div class="row g-3 g-md-4 align-items-start">
-            <div class="col-12 col-sm-4 col-md-3">
-              <img class="img-fluid rounded" src="images/hardware_setup.jpg" alt="Sensor simulation hardware setup" loading="lazy" />
-            </div>
-            <div class="col-12 col-sm-8 col-md-9">
-              <h3 class="h5 mb-1">Sensor Simulation of Humanoid Robot</h3>
-              <p class="mb-2"><a href="https://github.com/AshwinC313/Sensor_simulation_of_humanoid_robot" target="_blank" rel="noopener">Repo</a></p>
-              <ul class="tight-list">
-                <li>Integrated IMU, accelerometer, capacitive touch, potentiometers into a teleop controller.</li>
-                <li>Applied Kalman filters; controlled walking/sprinting/jumping via sensor ranges.</li>
-                <li>Unity game environment; ESP‑8266 microcontroller.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+    <hr class="rule"/>
 
-        <!-- Project -->
-        <article class="soft-card p-3 p-md-4">
-          <div class="row g-3 g-md-4 align-items-start">
-            <div class="col-12 col-sm-4 col-md-3">
-              <img class="img-fluid rounded" src="images/ros_course_project.jpg" alt="UR3 manipulator welding setup" loading="lazy" />
-            </div>
-            <div class="col-12 col-sm-8 col-md-9">
-              <h3 class="h5 mb-1">AR‑Tag Guided Path Planning of UR3 for Welding</h3>
-              <p class="mb-2"><a href="https://github.com/AshwinC313/AshwinC313.github.io/blob/master/data/ROS24%20Certificate_Chakravartula%2C%20Ashwin.pdf" target="_blank" rel="noopener">Course project certificate</a></p>
-              <ul class="tight-list">
-                <li>Kinematic transforms and IK for trajectory planning.</li>
-                <li>Point‑wise 2D welding path taught with AR tags; camera calibration.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+    <section id="projects">
+      <h2>Projects</h2>
+      <p><strong>Sensor Simulation of Humanoid Robot</strong> — <a href="https://github.com/AshwinC313/Sensor_simulation_of_humanoid_robot" target="_blank" rel="noopener">Repo</a><br/>
+      Integrated IMU, accelerometer, capacitive touch, and potentiometers into a teleop controller. Kalman filtering; Unity environment; ESP‑8266.</p>
 
-        <!-- Project -->
-        <article class="soft-card p-3 p-md-4">
-          <div class="row g-3 g-md-4 align-items-start">
-            <div class="col-12 col-sm-4 col-md-3">
-              <img class="img-fluid rounded" src="images/ccr_kp.jpg" alt="Cable‑driven continuum robot" loading="lazy" />
-            </div>
-            <div class="col-12 col-sm-8 col-md-9">
-              <h3 class="h5 mb-1">Kinematics Modelling of a Cable‑Driven Continuum Robot</h3>
-              <p class="mb-2"><a href="https://github.com/AshwinC313/ME-F377" target="_blank" rel="noopener">Code</a></p>
-              <ul class="tight-list">
-                <li>MATLAB modelling based on Cosserat rods.</li>
-                <li>Compared tendon routing profiles & experimental deflections.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+      <p><strong>AR‑Tag Guided Path Planning of UR3 for Welding</strong> — <a href="https://github.com/AshwinC313/AshwinC313.github.io/blob/master/data/ROS24%20Certificate_Chakravartula%2C%20Ashwin.pdf" target="_blank" rel="noopener">Course certificate</a><br/>
+      Kinematic transforms and IK; path taught with AR tags; camera calibration.</p>
 
-        <!-- Project -->
-        <article class="soft-card p-3 p-md-4">
-          <div class="row g-3 g-md-4 align-items-start">
-            <div class="col-12 col-sm-4 col-md-3">
-              <img class="img-fluid rounded" src="images/apf_dop_ss1.png" alt="Multi‑agent navigation simulation" loading="lazy" />
-            </div>
-            <div class="col-12 col-sm-8 col-md-9">
-              <h3 class="h5 mb-1">Multi‑Agent Navigation via Artificial Potential Functions</h3>
-              <p class="mb-2"><a href="https://github.com/AshwinC313/Design_Project_MEF376" target="_blank" rel="noopener">Code</a></p>
-              <ul class="tight-list">
-                <li>Formation‑control strategies for collective payload distribution.</li>
-                <li>Gazebo & Webots simulations with ROS + Python; Lyapunov stability.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+      <p><strong>Kinematics Modelling of a Cable‑Driven Continuum Robot</strong> — <a href="https://github.com/AshwinC313/ME-F377" target="_blank" rel="noopener">Code</a><br/>
+      MATLAB modelling via Cosserat rods; compared tendon routings & deflections.</p>
 
-        <!-- Project -->
-        <article class="soft-card p-3 p-md-4">
-          <div class="row g-3 g-md-4 align-items-start">
-            <div class="col-12 col-sm-4 col-md-3">
-              <img class="img-fluid rounded" src="images/mars_rover.jpg" alt="Project Kratos Mars Rover" loading="lazy" />
-            </div>
-            <div class="col-12 col-sm-8 col-md-9">
-              <h3 class="h5 mb-1">Project Kratos – Mars Rover</h3>
-              <p class="mb-2"><a href="https://kratos-the-rover.github.io/" target="_blank" rel="noopener">Website</a></p>
-              <ul class="tight-list">
-                <li>Designed/manufactured 6‑wheel rover chassis for URC.</li>
-                <li>Built life‑detection soil‑sampling mechanism.</li>
-                <li>URC 2022: 2nd in Asia; best Indian rover. ARC Istanbul: 2nd.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-      </div>
+      <p><strong>Multi‑Agent Navigation via Artificial Potential Functions</strong> — <a href="https://github.com/AshwinC313/Design_Project_MEF376" target="_blank" rel="noopener">Code</a><br/>
+      Formation control, Gazebo & Webots (ROS + Python), Lyapunov stability.</p>
+
+      <p><strong>Project Kratos – Mars Rover</strong> — <a href="https://kratos-the-rover.github.io/" target="_blank" rel="noopener">Website</a><br/>
+      6‑wheel rover chassis; life‑detection soil sampling. URC 2022: 2nd in Asia; ARC Istanbul: 2nd.</p>
     </section>
 
-    <!-- Coursework / Certifications -->
-    <section id="coursework" class="section-gap">
-      <h2 class="mb-3">Additional Coursework</h2>
-      <div class="vstack gap-4">
-        <article class="soft-card p-3 p-md-4">
-          <div class="row g-3 g-md-4 align-items-start">
-            <div class="col-12 col-sm-4 col-md-3">
-              <img class="img-fluid rounded" src="images/vit_block.png" alt="Vision Transformers block diagram" loading="lazy" />
-            </div>
-            <div class="col-12 col-sm-8 col-md-9">
-              <h3 class="h5 mb-1">Learning‑Based Control Seminar: Vision Transformers</h3>
-              <p class="mb-2">
-                <a href="https://github.com/AshwinC313/LBCS-RL" target="_blank" rel="noopener">Repo</a> ·
-                <!--<a href="https://www.dsme.rwth-aachen.de/cms/DSME/Das-Institut/Team/~jlolt/Prof-Sebastian-Trimpe/?allou=1&mobile=1&lidx=1" target="_blank" rel="noopener">Prof. Trimpe</a> · -->
-                <a href="https://docs.google.com/presentation/d/1e607GH3UjnOSfh0ucVWE5QTHYQCspA-P/edit?usp=sharing&ouid=109485382362674090923&rtpof=true&sd=true" target="_blank" rel="noopener">Presentation</a> ·
-                <a href="https://github.com/AshwinC313/LBCS-RL/blob/main/Seminar_review_paper_final_draft.pdf" target="_blank" rel="noopener">Review Paper</a>
-              </p>
-              <ul class="tight-list">
-                <li>Participated in a seminar offered by <a href="https://www.dsme.rwth-aachen.de/cms/DSME/Das-Institut/Team/~jlolt/Prof-Sebastian-Trimpe/?allou=1&mobile=1&lidx=1" target="_blank" rel="noopener">Institute of Data Science in Mechanical Engineering</a>.</li>
-                <li>Topic presentation and review paper draft in LaTeX.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+    <hr class="rule"/>
 
-        <article class="soft-card p-3 p-md-4">
-          <div class="row g-3 g-md-4 align-items-start">
-            <div class="col-12 col-sm-4 col-md-3">
-              <img class="img-fluid rounded" src="images/A_model.jpg" alt="Automated Driving" loading="lazy" />
-            </div>
-            <div class="col-12 col-sm-8 col-md-9">
-              <h3 class="h5 mb-1">Automated Driving</h3>
-              <p><a href="https://github.com/AshwinC313/AshwinC313.github.io/blob/master/documents/Ashwin_zertifikat_AutomatedDriving.pdf" target="_blank" rel="noopener">Course Certificate</a></p>
-            </div>
-          </div>
-        </article>
-      </div>
+    <section id="coursework">
+      <h2>Additional Coursework</h2>
+      <p><strong>Learning‑Based Control Seminar: Vision Transformers (Ongoing)</strong> —
+        <a href="https://github.com/AshwinC313/LBCS-RL" target="_blank" rel="noopener">Repo</a> ·
+        <a href="https://www.dsme.rwth-aachen.de/cms/DSME/Das-Institut/Team/~jlolt/Prof-Sebastian-Trimpe/?allou=1&mobile=1&lidx=1" target="_blank" rel="noopener">Prof. Trimpe</a> ·
+        <a href="https://docs.google.com/presentation/d/1e607GH3UjnOSfh0ucVWE5QTHYQCspA-P/edit?usp=sharing&ouid=109485382362674090923&rtpof=true&sd=true" target="_blank" rel="noopener">Presentation</a> ·
+        <a href="https://github.com/AshwinC313/LBCS-RL/blob/main/Seminar_review_paper_final_draft.pdf" target="_blank" rel="noopener">Review Paper</a>
+      </p>
+      <p><strong>Automated Driving</strong> — <a href="https://github.com/AshwinC313/AshwinC313.github.io/blob/master/documents/Ashwin_zertifikat_AutomatedDriving.pdf" target="_blank" rel="noopener">Course Certificate</a></p>
     </section>
 
-    <footer class="py-4 text-center muted">
-      <small>© <span id="year"></span> Ashwin Chakravartula </small>
+    <footer>
+      <p>© <span id="year"></span> Ashwin Chakravartula</p>
     </footer>
-  </main>
-
-  <!-- Bootstrap Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </div>
   <script>
-    // Current year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
