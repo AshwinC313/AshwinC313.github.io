@@ -8,63 +8,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
   <style>
-    :root {
-      --bg: #ffffff;
-      --text: #111827; /* gray-900 */
-      --muted: #4b5563; /* gray-600 */
-      --rule: #e5e7eb;  /* gray-200 */
-      --link: #2563eb; /* blue-600 */
-    }
+    /* Light mode only */
+    :root { --bg:#ffffff; --text:#111827; --muted:#4b5563; --rule:#e5e7eb; --link:#2563eb; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; background: var(--bg); color: var(--text); }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
 
-    /* Container mimicking jonbarron.info's clean single-column width */
+    /* Layout similar to jonbarron.info */
     .wrap { max-width: 900px; margin: 0 auto; padding: 24px 16px; }
+    header { display:grid; grid-template-columns: 1fr; gap:20px; align-items:center; }
+    @media (min-width: 900px){ header{ grid-template-columns: 1fr 220px; } }
 
-    /* Header: name + short blurb with photo to the right on wide screens */
-    header { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: center; }
-    @media (min-width: 900px) {
-      header { grid-template-columns: 1fr 220px; }
-    }
+    h1{ font-size: clamp(1.8rem, 1.2rem + 2vw, 2.4rem); margin:0 0 8px; font-weight:700; letter-spacing:-0.01em; }
+    h2{ font-size: clamp(1.2rem, 1rem + 1vw, 1.5rem); margin:0 0 12px; font-weight:700; }
+    p{ margin:0 0 12px; line-height:1.7; }
+    .muted{ color:var(--muted); }
 
-    h1 { font-size: clamp(1.8rem, 1.2rem + 2vw, 2.4rem); margin: 0 0 8px 0; font-weight: 700; letter-spacing: -0.01em; }
-    h2 { font-size: clamp(1.2rem, 1rem + 1vw, 1.5rem); margin: 0 0 12px 0; font-weight: 700; }
-    p { margin: 0 0 12px 0; line-height: 1.7; }
-    .muted { color: var(--muted); }
-
-    /* Links row under the name */
-    .links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 6px 0 0; }
-    .links a { color: var(--link); text-decoration: none; font-weight: 600; }
-    .links .dot { color: #9ca3af; }
+    .links{ display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:6px 0 0; }
+    .links a{ color:var(--link); text-decoration:none; font-weight:600; }
+    .links .dot{ color:#9ca3af; }
 
     /* Icon badges */
-    .icon-badges { display: flex; gap: 14px; align-items: center; }
-    .icon-badges a { display: inline-flex; width: 38px; height: 38px; border-radius: 999px; align-items: center; justify-content: center; text-decoration: none; background: #eef2ff; transition: transform .15s ease, background .2s ease; }
-    .icon-badges a i { font-size: 1.25rem; color: #1f2937; }
-    .icon-badges a:hover { transform: translateY(-2px); background: #e0e7ff; }
-    @media (prefers-color-scheme: dark) {
-      body { background: #0b0c0f; color: #e5e7eb; }
-      .muted { color: #9aa2b2; }
-      .icon-badges a { background: #1f2937; }
-      .icon-badges a i { color: #e5e7eb; }
-      .icon-badges a:hover { background: #374151; }
-      .rule { border-color: rgba(255,255,255,.12); }
-      a { color: #93c5fd; }
-    }
+    .icon-badges{ display:flex; gap:14px; align-items:center; }
+    .icon-badges a{ display:inline-flex; width:38px; height:38px; border-radius:999px; align-items:center; justify-content:center; text-decoration:none; background:#eef2ff; transition:transform .15s ease, background .2s ease; }
+    .icon-badges a i{ font-size:1.25rem; color:#1f2937; }
+    .icon-badges a:hover{ transform:translateY(-2px); background:#e0e7ff; }
 
-    /* Photo */
-    .photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; justify-self: center; }
-    @media (min-width: 900px) { .photo { justify-self: end; } }
+    /* Headshot */
+    .photo{ width:180px; height:180px; border-radius:50%; object-fit:cover; justify-self:center; }
+    @media (min-width:900px){ .photo{ justify-self:end; } }
 
-    /* Rules and section spacing similar to jonbarron.info */
-    .rule { border: 0; border-top: 1px solid var(--rule); margin: 22px 0; }
-    section { margin: 22px 0 10px; }
+    /* Section spacing + rule */
+    .rule{ border:0; border-top:1px solid var(--rule); margin:22px 0; }
+    section{ margin:22px 0 10px; }
+
+    /* Right thumbnails for entries (projects + experience) */
+    .thumb{ width:180px; max-width:40vw; border-radius:10px; float:right; margin: 2px 0 10px 16px; }
+    @media (max-width: 640px){ .thumb{ float:none; display:block; margin:8px auto 12px; width:min(70vw, 260px); } }
 
     /* Lists */
-    ul { padding-left: 18px; margin: 0; }
-    li { margin: 6px 0; }
+    ul{ padding-left:18px; margin:0; }
+    li{ margin:6px 0; }
 
-    footer { text-align: center; color: #9ca3af; font-size: .95rem; padding: 18px 0 12px; }
+    footer{ text-align:center; color:#9ca3af; font-size:.95rem; padding:18px 0 12px; }
   </style>
 </head>
 <body>
@@ -109,6 +94,8 @@
 
     <section id="experience">
       <h2>Experience</h2>
+
+      <img class="thumb" src="images/doosan_robot_project.jpg" alt="Doosan robot project"/>
       <p><strong>Project Student</strong> | Industrial Engineering and Ergonomics Institute, RWTH Aachen <span class="muted">(Apr ’25 – Present)</span></p>
       <ul>
         <li>Haptic demonstrator for teleoperative robot grinding.</li>
@@ -117,6 +104,7 @@
         <li>Waypoint generation from CAD part point clouds.</li>
       </ul>
 
+      <img class="thumb" src="images/RWTH_Logo.jpg" alt="RWTH logo"/>
       <p><strong>Student Assistant</strong> | Mechatronics and Mobile Propulsion Institute, RWTH Aachen <span class="muted">(Jan ’24 – Sept ’24)</span> — <a href="https://github.com/AshwinC313/AshwinC313.github.io/blob/master/documents/ashwin_hiwi_zeugnis.pdf" target="_blank" rel="noopener">Experience Letter</a></p>
       <ul>
         <li>Algorithms for autonomous ship navigation.</li>
@@ -125,6 +113,7 @@
         <li>Sensor fusion of GPS + IMU.</li>
       </ul>
 
+      <img class="thumb" src="images/mercedes.png" alt="Mercedes‑Benz logo"/>
       <p><strong>Student Intern</strong> | Mercedes‑Benz Research and Development India <span class="muted">(Jan ’23 – Jun ’23)</span> — <a href="https://github.com/AshwinC313/AshwinC313.github.io/blob/master/documents/mercedes_benz_reference.pdf" target="_blank" rel="noopener">Internship Certificate</a></p>
       <ul>
         <li>Topography optimization to reduce springback (BIW parts).</li>
@@ -133,6 +122,7 @@
         <li>Manufacturing feasibility (AutoForm).</li>
       </ul>
 
+      <img class="thumb" src="images/wastefull.png" alt="Wastefull Insights logo"/>
       <p><strong>Robotics Intern</strong> | Wastefull Insights LLP <span class="muted">(Jun ’22 – Aug ’22)</span></p>
       <ul>
         <li>Optimized scheduling to reduce pick time on 3‑axis gantry.</li>
@@ -140,6 +130,7 @@
         <li>Gazebo digital twin of the environment.</li>
       </ul>
 
+      <img class="thumb" src="images/BITS.png" alt="BITS Pilani logo"/>
       <p><strong>Research Assistant</strong> | BITS Pilani <span class="muted">(Aug ’22 – Dec ’22)</span></p>
       <ul>
         <li>Modeled cable‑driven continuum robots (with Prof. Ashwin KP).</li>
@@ -151,18 +142,24 @@
 
     <section id="projects">
       <h2>Projects</h2>
+
+      <img class="thumb" src="images/hardware_setup.jpg" alt="Sensor simulation hardware setup"/>
       <p><strong>Sensor Simulation of Humanoid Robot</strong> — <a href="https://github.com/AshwinC313/Sensor_simulation_of_humanoid_robot" target="_blank" rel="noopener">Repo</a><br/>
       Integrated IMU, accelerometer, capacitive touch, and potentiometers into a teleop controller. Kalman filtering; Unity environment; ESP‑8266.</p>
 
+      <img class="thumb" src="images/ros_course_project.jpg" alt="UR3 manipulator welding setup"/>
       <p><strong>AR‑Tag Guided Path Planning of UR3 for Welding</strong> — <a href="https://github.com/AshwinC313/AshwinC313.github.io/blob/master/data/ROS24%20Certificate_Chakravartula%2C%20Ashwin.pdf" target="_blank" rel="noopener">Course certificate</a><br/>
       Kinematic transforms and IK; path taught with AR tags; camera calibration.</p>
 
+      <img class="thumb" src="images/ccr_kp.jpg" alt="Cable‑driven continuum robot"/>
       <p><strong>Kinematics Modelling of a Cable‑Driven Continuum Robot</strong> — <a href="https://github.com/AshwinC313/ME-F377" target="_blank" rel="noopener">Code</a><br/>
       MATLAB modelling via Cosserat rods; compared tendon routings & deflections.</p>
 
+      <img class="thumb" src="images/apf_dop_ss1.png" alt="Multi‑agent navigation simulation"/>
       <p><strong>Multi‑Agent Navigation via Artificial Potential Functions</strong> — <a href="https://github.com/AshwinC313/Design_Project_MEF376" target="_blank" rel="noopener">Code</a><br/>
       Formation control, Gazebo & Webots (ROS + Python), Lyapunov stability.</p>
 
+      <img class="thumb" src="images/mars_rover.jpg" alt="Project Kratos Mars Rover"/>
       <p><strong>Project Kratos – Mars Rover</strong> — <a href="https://kratos-the-rover.github.io/" target="_blank" rel="noopener">Website</a><br/>
       6‑wheel rover chassis; life‑detection soil sampling. URC 2022: 2nd in Asia; ARC Istanbul: 2nd.</p>
     </section>
