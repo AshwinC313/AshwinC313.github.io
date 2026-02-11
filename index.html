@@ -6,170 +6,316 @@
   <title>Ashwin Chakravartula</title>
   <meta name="author" content="Ashwin Chakravartula" />
   <link rel="icon" type="image/jpg" href="images/profile_pic/github_profile_photo_3.jpg" />
-  <style type="text/css" href="css/main.css">
+
+  <!-- Clean academic font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --link: #1a56db;
+      --link-hover: #b45309;   /* warm academic hover */
+      --rule: #e5e7eb;
+      --chip: #f3f4f6;
+    }
+
+    html, body { background: var(--bg); }
+    body{
+      margin:0;
+      color: var(--text);
+      font-family: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Custom tag styling (Jon Barron style) */
+    name{
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 34px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+    }
+    heading{
+      display:block;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 22px;
+      font-weight: 600;
+      margin: 6px 0 10px;
+      padding-top: 6px;
+      border-top: 1px solid var(--rule);
+    }
+    papertitle{
+      font-weight: 700;
+    }
+
+    p{ margin: 0 0 12px; }
+    a{ color: var(--link); text-decoration: none; }
+    a:hover{ color: var(--link-hover); }
+    strong{ font-weight: 700; }
+
+    /* Layout polish */
+    table{ border-collapse: separate; }
+    img{ border: 0; }
+
+    /* Header link row */
+    .top-links a{
+      font-weight: 600;
+    }
+
+    /* Lists */
+    ul{ margin: 10px 0 0 18px; padding:0; }
+    li{ margin: 6px 0; }
+
+    /* News list: slightly tighter */
+    .news ul{ margin-top: 8px; }
+    .news li{ margin: 5px 0; color: var(--text); }
+    .news strong{ color: var(--text); }
+
+    /* Entry rows: subtle separation */
+    .entry-row{
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      background: #fff;
+    }
+    .entry-cell{
+      background: #fff;
+    }
+    .thumb{
+      width: 20%;
+      vertical-align: middle;
+    }
+    .thumb img{
+      width: 140px;
+      height: auto;
+      border-radius: 10px;
+      display:block;
+    }
+
+    /* Make the overall page feel “paper-like” */
+    .page{
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 18px 14px 54px;
+    }
+
+    /* Small footer */
+    .footer-note{
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Responsive: stack header nicely */
+    @media (max-width: 720px){
+      name{ font-size: 30px; }
+      .page{ padding: 14px 10px 42px; }
+      .thumb img{ width: 120px; }
+    }
   </style>
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-      <tr style="padding:0">
-        <td style="padding:0">
-          <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr style="padding:0">
-                <td style="padding:2.5%;width:63%;vertical-align:middle">
-                  <p style="text-align:center">
-                    <name>Ashwin Chakravartula</name>
-                  </p>
-                  <p>
-                    I am an MSc Robotic Systems Engineering student at RWTH Aachen University, where I work on autonomous mobility, navigation, and learning-based control for robotics systems.
-                  </p>
-                  <p>
-                    I previously worked as a student assistant at the Mechatronics and Mobile Propulsion Institute (MMP) and currently contribute to teleoperation and industrial robotics projects at the Industrial Engineering and Ergonomics Institute (IAW).
-                  </p>
-                  <p style="text-align:center">
-                    <a href="mailto:ashwin.chakravartula@rwth-aachen.de">Email</a> &nbsp;/&nbsp;
-                    <a href="data/ashwin_lebenslauf_nov.pdf" target="_blank" rel="noopener">CV</a> &nbsp;/&nbsp;
-                    <a href="https://github.com/AshwinC313" target="_blank" rel="noopener">GitHub</a> &nbsp;/&nbsp;
-                    <a href="https://www.linkedin.com/in/ashwin-c-0548a5196/" target="_blank" rel="noopener">LinkedIn</a>
-                  </p>
-                </td>
-                <td style="padding:2.5%;width:37%;max-width:37%">
-                  <a href="images/profile_pic/github_profile_photo_3.jpg"><img style="width:100%;max-width:100%;object-fit:cover; border-radius:50%;" alt="profile photo" src="images/profile_pic/github_profile_photo_3.jpg" class="hoverZoomLink" /></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+  <div class="page">
+    <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr style="padding:0">
+          <td style="padding:0">
 
-          <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:16px;width:100%;vertical-align:middle">
-                  <heading>News</heading>
-                  <ul>
-                    <li><strong>Jul 2025</strong> — Student Research Assistant at <a href="https://www.amt.rwth-aachen.de/en/home.html" target="_blank" rel="noopener">AMT, RWTH Aachen</a>.</li>
-                    <li><strong>Mar 2025</strong> — Project Student at <a href="https://www.iaw.rwth-aachen.de/cms/~ieplw/iaw/" target="_blank" rel="noopener">IAW, RWTH Aachen</a>.</li>
-                    <li><strong>Jan 2024</strong> — Student Research Assistant at <a href="https://www.mmp.rwth-aachen.de/cms/Mechatronics/~fwqq/Das-Lehr-und-Forschungsgebiet/lidx/1/" target="_blank" rel="noopener">Mechatronics and Mobile Propulsions Institute</a>.</li>
-                    <li><strong>Oct 2023</strong> — Started MSc Robotic Systems Engineering at <a href="https://www.rwth-aachen.de/go/id/a/?lidx=1" target="_blank" rel="noopener">RWTH Aachen University</a>.</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            <!-- Header -->
+            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr style="padding:0">
+                  <td style="padding:2.5%;width:63%;vertical-align:middle">
+                    <p style="text-align:center">
+                      <name>Ashwin Chakravartula</name>
+                    </p>
 
-          <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:16px;width:100%;vertical-align:middle">
-                  <heading>Experience</heading>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                    <p>
+                      I am an MSc Robotic Systems Engineering student at RWTH Aachen University, where I work on autonomous mobility, navigation, and learning-based control for robotics systems.
+                    </p>
+                    <p>
+                      I previously worked as a student assistant at the Mechatronics and Mobile Propulsion Institute (MMP) and currently contribute to teleoperation and industrial robotics projects at the Industrial Engineering and Ergonomics Institute (IAW).
+                    </p>
 
-          <table style="width:100%;border:0;border-spacing:0 10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:16px;width:20%;vertical-align:middle"><img src="images/project_images/doosan_robot_project.jpg" alt="Doosan project" width="140" /></td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <papertitle>Project Student, Industrial Engineering and Ergonomics Institute (RWTH Aachen)</papertitle>
-                  <br />
-                  Apr 2025 – Present
-                  <ul>
-                    <li>Built a haptic teleoperation demonstrator for industrial robotic grinding.</li>
-                    <li>Developed ROS2 workflows and Unity-based simulation for the Doosan M1013 manipulator.</li>
-                  </ul>
-                </td>
-              </tr>
+                    <p class="top-links" style="text-align:center">
+                      <a href="mailto:ashwin.chakravartula@rwth-aachen.de">Email</a> &nbsp;/&nbsp;
+                      <a href="data/ashwin_lebenslauf_nov.pdf" target="_blank" rel="noopener">CV</a> &nbsp;/&nbsp;
+                      <a href="https://github.com/AshwinC313" target="_blank" rel="noopener">GitHub</a> &nbsp;/&nbsp;
+                      <a href="https://www.linkedin.com/in/ashwin-c-0548a5196/" target="_blank" rel="noopener">LinkedIn</a>
+                    </p>
+                  </td>
 
-              <tr>
-                <td style="padding:16px;width:20%;vertical-align:middle"><img src="images/institute_logos/RWTH_Logo.jpg" alt="RWTH" width="140" /></td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <papertitle>Student Assistant, Mechatronics and Mobile Propulsion Institute (RWTH Aachen)</papertitle>
-                  <br />
-                  Jan 2024 – Sep 2024 &nbsp;/&nbsp; <a href="documents/ashwin_hiwi_zeugnis.pdf" target="_blank" rel="noopener">Experience Letter</a>
-                  <ul>
-                    <li>Worked on autonomous ship navigation and control allocation for USV configurations.</li>
-                    <li>Implemented trajectory planning in ROS/Gazebo with GPS-IMU sensor fusion.</li>
-                  </ul>
-                </td>
-              </tr>
+                  <td style="padding:2.5%;width:37%;max-width:37%;vertical-align:middle">
+                    <a href="images/profile_pic/github_profile_photo_3.jpg">
+                      <img style="width:100%;max-width:240px;object-fit:cover;border-radius:999px;"
+                           alt="profile photo"
+                           src="images/profile_pic/github_profile_photo_3.jpg" />
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-              <tr>
-                <td style="padding:16px;width:20%;vertical-align:middle"><img src="images/institute_logos/mercedes.png" alt="Mercedes" width="140" /></td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <papertitle>CAE Intern, Mercedes-Benz R&amp;D India</papertitle>
-                  <br />
-                  Jan 2023 – Jul 2023 &nbsp;/&nbsp; <a href="documents/mercedes_benz_reference.pdf" target="_blank" rel="noopener">Reference Letter</a>
-                  <ul>
-                    <li>Developed finite-element simulation studies for BIW structures.</li>
-                    <li>Supported structural optimization and manufacturability analysis pipelines.</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            <!-- News -->
+            <table class="news" style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr>
+                  <td style="padding:16px;width:100%;vertical-align:middle">
+                    <heading>News</heading>
+                    <ul>
+                      <li><strong>Jul 2025</strong> — Student Research Assistant at <a href="https://www.amt.rwth-aachen.de/en/home.html" target="_blank" rel="noopener">AMT, RWTH Aachen</a>.</li>
+                      <li><strong>Mar 2025</strong> — Project Student at <a href="https://www.iaw.rwth-aachen.de/cms/~ieplw/iaw/" target="_blank" rel="noopener">IAW, RWTH Aachen</a>.</li>
+                      <li><strong>Jan 2024</strong> — Student Research Assistant at <a href="https://www.mmp.rwth-aachen.de/cms/Mechatronics/~fwqq/Das-Lehr-und-Forschungsgebiet/lidx/1/" target="_blank" rel="noopener">Mechatronics and Mobile Propulsions Institute</a>.</li>
+                      <li><strong>Oct 2023</strong> — Started MSc Robotic Systems Engineering at <a href="https://www.rwth-aachen.de/go/id/a/?lidx=1" target="_blank" rel="noopener">RWTH Aachen University</a>.</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-          <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:16px;width:100%;vertical-align:middle">
-                  <heading>Selected Projects</heading>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            <!-- Experience -->
+            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr>
+                  <td style="padding:16px;width:100%;vertical-align:middle">
+                    <heading>Experience</heading>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-          <table style="width:100%;border:0;border-spacing:0 10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:16px;width:20%;vertical-align:middle"><img src="images/project_images/hardware_setup.jpg" alt="Humanoid sensors" width="140" /></td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <papertitle>Sensor Simulation of Humanoid Robot</papertitle>
-                  <br />
-                  <a href="https://github.com/AshwinC313/Sensor_simulation_of_humanoid_robot" target="_blank" rel="noopener">Code</a>
-                  <p>Integrated multimodal sensor inputs into a teleoperation controller and applied filtering for stable locomotion control in a Unity environment.</p>
-                </td>
-              </tr>
+            <table style="width:100%;border:0;border-spacing:0 12px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr class="entry-row">
+                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                    <img src="images/project_images/doosan_robot_project.jpg" alt="Doosan project" />
+                  </td>
+                  <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
+                    <papertitle>Project Student, Industrial Engineering and Ergonomics Institute (RWTH Aachen)</papertitle>
+                    <br />
+                    <span style="color:var(--muted)">Apr 2025 – Present</span>
+                    <ul>
+                      <li>Built a haptic teleoperation demonstrator for industrial robotic grinding.</li>
+                      <li>Developed ROS2 workflows and Unity-based simulation for the Doosan M1013 manipulator.</li>
+                    </ul>
+                  </td>
+                </tr>
 
-              <tr>
-                <td style="padding:16px;width:20%;vertical-align:middle"><img src="images/project_images/apf_dop_ss1.png" alt="APF project" width="140" /></td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <papertitle>Multi-Agent Navigation using Artificial Potential Functions</papertitle>
-                  <br />
-                  <a href="https://github.com/AshwinC313/Design_Project_MEF376" target="_blank" rel="noopener">Code</a>
-                  <p>Implemented formation-control and cooperative transport simulations in ROS/Python environments with stability-focused control design.</p>
-                </td>
-              </tr>
+                <tr class="entry-row">
+                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                    <img src="images/institute_logos/RWTH_Logo.jpg" alt="RWTH" />
+                  </td>
+                  <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
+                    <papertitle>Student Assistant, Mechatronics and Mobile Propulsion Institute (RWTH Aachen)</papertitle>
+                    <br />
+                    <span style="color:var(--muted)">Jan 2024 – Sep 2024</span>
+                    &nbsp;/&nbsp; <a href="documents/ashwin_hiwi_zeugnis.pdf" target="_blank" rel="noopener">Experience Letter</a>
+                    <ul>
+                      <li>Worked on autonomous ship navigation and control allocation for USV configurations.</li>
+                      <li>Implemented trajectory planning in ROS/Gazebo with GPS-IMU sensor fusion.</li>
+                    </ul>
+                  </td>
+                </tr>
 
-              <tr>
-                <td style="padding:16px;width:20%;vertical-align:middle"><img src="images/project_images/mars_rover.jpg" alt="Mars Rover" width="140" /></td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <papertitle>Project Kratos – Mars Rover</papertitle>
-                  <br />
-                  <a href="https://kratos-the-rover.github.io/" target="_blank" rel="noopener">Website</a>
-                  <p>Designed and built subsystems for a six-wheel Mars rover platform that ranked top in international rover competitions.</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                <tr class="entry-row">
+                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                    <img src="images/institute_logos/mercedes.png" alt="Mercedes" />
+                  </td>
+                  <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
+                    <papertitle>CAE Intern, Mercedes-Benz R&amp;D India</papertitle>
+                    <br />
+                    <span style="color:var(--muted)">Jan 2023 – Jul 2023</span>
+                    &nbsp;/&nbsp; <a href="documents/mercedes_benz_reference.pdf" target="_blank" rel="noopener">Reference Letter</a>
+                    <ul>
+                      <li>Developed finite-element simulation studies for BIW structures.</li>
+                      <li>Supported structural optimization and manufacturability analysis pipelines.</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-          <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:0">
-                  <br />
-                  <p style="text-align:right;font-size:small;">
-                    Template inspired by <a href="https://jonbarron.info/" target="_blank" rel="noopener">Jon Barron</a>.
-                  </p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+            <!-- Selected Projects -->
+            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr>
+                  <td style="padding:16px;width:100%;vertical-align:middle">
+                    <heading>Selected Projects</heading>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table style="width:100%;border:0;border-spacing:0 12px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr class="entry-row">
+                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                    <img src="images/project_images/hardware_setup.jpg" alt="Humanoid sensors" />
+                  </td>
+                  <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
+                    <papertitle>Sensor Simulation of Humanoid Robot</papertitle>
+                    <br />
+                    <a href="https://github.com/AshwinC313/Sensor_simulation_of_humanoid_robot" target="_blank" rel="noopener">Code</a>
+                    <p style="margin-top:10px;">
+                      Integrated multimodal sensor inputs into a teleoperation controller and applied filtering for stable locomotion control in a Unity environment.
+                    </p>
+                  </td>
+                </tr>
+
+                <tr class="entry-row">
+                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                    <img src="images/project_images/apf_dop_ss1.png" alt="APF project" />
+                  </td>
+                  <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
+                    <papertitle>Multi-Agent Navigation using Artificial Potential Functions</papertitle>
+                    <br />
+                    <a href="https://github.com/AshwinC313/Design_Project_MEF376" target="_blank" rel="noopener">Code</a>
+                    <p style="margin-top:10px;">
+                      Implemented formation-control and cooperative transport simulations in ROS/Python environments with stability-focused control design.
+                    </p>
+                  </td>
+                </tr>
+
+                <tr class="entry-row">
+                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                    <img src="images/project_images/mars_rover.jpg" alt="Mars Rover" />
+                  </td>
+                  <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
+                    <papertitle>Project Kratos – Mars Rover</papertitle>
+                    <br />
+                    <a href="https://kratos-the-rover.github.io/" target="_blank" rel="noopener">Website</a>
+                    <p style="margin-top:10px;">
+                      Designed and built subsystems for a six-wheel Mars rover platform that ranked top in international rover competitions.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Footer -->
+            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr>
+                  <td style="padding:0">
+                    <br />
+                    <p class="footer-note" style="text-align:right;">
+                      Template inspired by <a href="https://jonbarron.info/" target="_blank" rel="noopener">Jon Barron</a>.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
