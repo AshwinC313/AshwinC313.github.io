@@ -7,7 +7,7 @@
   <meta name="author" content="Ashwin Chakravartula" />
   <link rel="icon" type="image/jpg" href="images/profile_pic/pic_1.jpeg"/>
 
-  <style>
+  <!-- <style>
     :root{
       --bg: #ffffff;
       --text: #111827;
@@ -112,6 +112,40 @@
       .page{ padding: 14px 10px 42px; }
       .thumb img{ width: 120px; }
     }
+  </style> -->
+  <style>
+      /* Shared thumb cell behavior */
+    .thumb{
+      vertical-align: middle;
+    }
+
+    /* EXPERIENCE thumbnails (smaller) */
+    .thumb.exp{
+      width: 18%;
+    }
+    .thumb.exp img{
+      width: 140px;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+
+    /* PROJECT thumbnails (bigger) */
+    .thumb.proj{
+      width: 24%;
+    }
+    .thumb.proj img{
+      width: 220px;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px){
+      .thumb.exp img{ width: 110px; }
+      .thumb.proj img{ width: 160px; }
+    }
   </style>
 </head>
 
@@ -205,7 +239,7 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
             <table style="width:100%;border:0;border-spacing:0 12px;border-collapse:separate;margin-right:auto;margin-left:auto;">
               <tbody>
                 <tr class="entry-row">
-                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                  <td class="thumb exp" style="padding:16px;vertical-align:middle">
                     <img src="images/institute_logos/DLR.jpeg" alt="DLR: Institute of Robotics and Mechatronics" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
@@ -220,7 +254,7 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                   </td>
                 </tr>                
                 <tr class="entry-row">
-                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                  <td class="thumb exp" style="padding:16px;vertical-align:middle">
                     <img src="images/institute_logos/rwth_amt_logo.jpeg" alt="Advanced Mining Technologies" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
@@ -237,7 +271,7 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                  <td class="thumb exp" style="padding:16px;vertical-align:middle">
                     <img src="images/institute_logos/IAW_1.png" alt="Human Robot Collaboration Research Project" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
@@ -252,7 +286,7 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                  <td class="thumb exp" style="padding:16px;vertical-align:middle">
                     <img src="images/institute_logos/mmp_rwth_aachen_logo.jpeg" alt="RWTH" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
@@ -268,7 +302,7 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                  <td class="thumb exp" style="padding:16px;vertical-align:middle">
                     <img src="images/institute_logos/mercedes.png" alt="Mercedes" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
@@ -300,7 +334,7 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
               <tbody>
 
                 <tr class="entry-row">
-                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                  <td class="thumb proj" style="padding:16px;vertical-align:middle">
                     <img src="images/project_images/pointcloud_scene.jpeg" alt="Mining Environment" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
@@ -314,7 +348,7 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                  <td class="thumb proj" style="padding:16px;vertical-align:middle">
                     <img src="images/project_images/hardware_setup.jpg" alt="Humanoid sensors" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
@@ -328,7 +362,7 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                  <td class="thumb proj" style="padding:16px;vertical-align:middle">
                     <img src="images/project_images/apf_dop_ss1.png" alt="APF project" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
@@ -342,7 +376,7 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb" style="padding:16px;vertical-align:middle">
+                  <td class="thumb proj" style="padding:16px;vertical-align:middle">
                     <img src="images/project_images/mars_rover.jpg" alt="Mars Rover" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
