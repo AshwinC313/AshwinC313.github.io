@@ -81,15 +81,25 @@
     .entry-cell{
       background: #fff;
     }
-    .thumb{
-      width: 20%;
-      vertical-align: middle;
-    }
-    .thumb img{
-      width: 200px;
+    /* Shared thumb cell behavior */
+    .thumb{ vertical-align: middle; }
+
+    /* EXPERIENCE thumbnails (smaller) */
+    .thumb.exp{ width: 18%; }
+    .thumb.exp img{
+      width: 140px;
       height: auto;
       border-radius: 10px;
-      display:block;
+      display: block;
+    }
+
+/* PROJECT thumbnails (bigger) */
+    .thumb.proj{ width: 24%; }
+    .thumb.proj img{
+      width: 220px;
+      height: auto;
+      border-radius: 10px;
+      display: block;
     }
 
     /* Make the overall page feel “paper-like” */
@@ -110,44 +120,11 @@
     @media (max-width: 720px){
       name{ font-size: 30px; }
       .page{ padding: 14px 10px 42px; }
-      .thumb img{ width: 120px; }
-    }
-  </style>
-  
-  <!-- <style>
-      /* Shared thumb cell behavior */
-    .thumb{
-      vertical-align: middle;
-    }
-
-    /* EXPERIENCE thumbnails (smaller) */
-    .thumb.exp{
-      width: 18%;
-    }
-    .thumb.exp img{
-      width: 140px;
-      height: auto;
-      border-radius: 10px;
-      display: block;
-    }
-
-    /* PROJECT thumbnails (bigger) */
-    .thumb.proj{
-      width: 24%;
-    }
-    .thumb.proj img{
-      width: 220px;
-      height: auto;
-      border-radius: 10px;
-      display: block;
-    }
-
-    /* Responsive */
-    @media (max-width: 720px){
       .thumb.exp img{ width: 110px; }
       .thumb.proj img{ width: 160px; }
     }
-  </style> -->
+  </style>
+
 </head>
 
 <body>
@@ -272,7 +249,7 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb exp" style="padding:16px;vertical-align:middle">
+                  <td class="thumb" style="padding:16px;vertical-align:middle">
                     <img src="images/institute_logos/IAW_1.png" alt="Human Robot Collaboration Research Project" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
@@ -287,7 +264,7 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb exp" style="padding:16px;vertical-align:middle">
+                  <td class="thumb" style="padding:16px;vertical-align:middle">
                     <img src="images/institute_logos/mmp_rwth_aachen_logo.jpeg" alt="RWTH" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
