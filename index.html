@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ashwin Chakravartula</title>
   <meta name="author" content="Ashwin Chakravartula" />
-  <link rel="icon" type="image/jpg" href="images/profile_pic/pic_1.jpeg"/>
+  <link rel="icon" type="image/jpeg" href="images/profile_pic/pic_1.jpeg"/>
+
+  <!-- Fonts (you were referencing these but not loading them) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -13,9 +18,8 @@
       --text: #111827;
       --muted: #4b5563;
       --link: #1a56db;
-      --link-hover: #b45309;   /* warm academic hover */
+      --link-hover: #b45309;
       --rule: #e5e7eb;
-      --chip: #f3f4f6;
     }
 
     html, body { background: var(--bg); }
@@ -29,7 +33,7 @@
       text-rendering: optimizeLegibility;
     }
 
-    /* Custom tag styling (Jon Barron style) */
+    /* Custom tag styling (Jon Barron-like) */
     name{
       font-family: "Source Serif 4", Georgia, serif;
       font-size: 34px;
@@ -45,64 +49,65 @@
       padding-top: 6px;
       border-top: 1px solid var(--rule);
     }
-    papertitle{
-      font-weight: 700;
-    }
+    papertitle{ font-weight: 700; }
 
     p{ margin: 0 0 12px; }
     a{ color: var(--link); text-decoration: none; }
     a:hover{ color: var(--link-hover); }
     strong{ font-weight: 700; }
 
-    /* Layout polish */
     table{ border-collapse: separate; }
     img{ border: 0; }
 
-    /* Header link row */
-    .top-links a{
-      font-weight: 600;
-    }
+    .top-links a{ font-weight: 600; }
 
-    /* Lists */
     ul{ margin: 10px 0 0 18px; padding:0; }
     li{ margin: 6px 0; }
 
-    /* News list: slightly tighter */
     .news ul{ margin-top: 8px; }
     .news li{ margin: 5px 0; color: var(--text); }
-    .news strong{ color: var(--text); }
 
-    /* Entry rows: subtle separation */
+    /* Entry rows */
     .entry-row{
       border: 1px solid var(--rule);
       border-radius: 10px;
       background: #fff;
     }
-    .entry-cell{
-      background: #fff;
+    .entry-cell{ background: #fff; }
+
+    /* IMPORTANT: stabilize table sizing so no giant gaps */
+    .entries{
+      width:100%;
+      table-layout: fixed;
+      border:0;
+      border-spacing:0 12px;
+      border-collapse:separate;
+      margin-right:auto;
+      margin-left:auto;
     }
-    /* Shared thumb cell behavior */
+
+    /* Thumb sizing: fixed cell widths (no % widths) */
     .thumb{ vertical-align: middle; }
 
-    /* EXPERIENCE thumbnails (smaller) */
-    .thumb.exp{ width: 18%; }
+    /* Experience thumbs (smaller) */
+    .thumb.exp{ width: 170px; }
     .thumb.exp img{
-      width: 200px;
+      width: 140px;
       height: auto;
       border-radius: 10px;
       display:block;
     }
 
-/* PROJECT thumbnails (bigger) */
-    .thumb.proj{ width: 24%; }
+    /* Project thumbs (bigger) */
+    .thumb.proj{ width: 260px; }
     .thumb.proj img{
-      width: 220px;
+      width: 230px;
       height: auto;
       border-radius: 10px;
-      display: block;
+      display:block;
     }
 
-    /* Make the overall page feel “paper-like” */
+    /* Page wrapper */
     .page{
       width: 100%;
       max-width: 860px;
@@ -110,42 +115,48 @@
       padding: 18px 14px 54px;
     }
 
-    /* Small footer */
     .footer-note{
       font-size: 13px;
       color: var(--muted);
     }
 
-    /* Responsive: stack header nicely */
+    /* Responsive */
     @media (max-width: 720px){
       name{ font-size: 30px; }
       .page{ padding: 14px 10px 42px; }
-      .thumb.exp img{ width: 140px; }
-      .thumb.proj img{ width: 2000px; }
+
+      .thumb.exp{ width: 140px; }
+      .thumb.exp img{ width: 115px; }
+
+      .thumb.proj{ width: 200px; }
+      .thumb.proj img{ width: 170px; }
     }
   </style>
-
 </head>
 
 <body>
   <div class="page">
     <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
       <tbody>
-        <tr style="padding:0">
+        <tr>
           <td style="padding:0">
 
             <!-- Header -->
             <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
               <tbody>
-                <tr style="padding:0">
+                <tr>
                   <td style="padding:2.5%;width:63%;vertical-align:middle">
                     <p style="text-align:center">
                       <name>Ashwin Chakravartula</name>
                     </p>
 
                     <p>
-I am an MSc student in Robotic Systems Engineering at RWTH Aachen University, specializing in control, simulation, and learning-based methods for robotic systems. My work centers on environment perception, navigation, and trajectory generation, with a strong emphasis on deploying robust solutions from simulation to real-world platforms.
-Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">German Aerospace Center (DLR)</a>, where I a am developing surface reconstruction and offline trajectory planning pipelines for industrial manipulators.
+                      I am an MSc student in Robotic Systems Engineering at RWTH Aachen University, specializing in control,
+                      simulation, and learning-based methods for robotic systems. My work centers on environment perception,
+                      navigation, and trajectory generation, with a strong emphasis on deploying robust solutions from
+                      simulation to real-world platforms. Currently, I am a working student at the
+                      <a href="https://www.dlr.de/en/rm" target="_blank" rel="noopener">German Aerospace Center (DLR)</a>,
+                      where I develop surface reconstruction and offline trajectory planning pipelines for industrial manipulators.
                     </p>
 
                     <p class="top-links" style="text-align:center">
@@ -185,18 +196,18 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
               </tbody>
             </table>
 
-            <!-- News -->
+            <!-- Experience History -->
             <table class="news" style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
               <tbody>
                 <tr>
                   <td style="padding:16px;width:100%;vertical-align:middle">
                     <heading>Experience History</heading>
                     <ul>
-                      <li><strong>Jan'26</strong> — Starting working as a Working Student at <a href="https://www.dlr.de/en/rm" target="_blank" rel="noopener">German Aerospace Center</a>.</li>
-                      <li><strong>Jul'25</strong> — Started working as a Student Research Assistant at <a href="https://www.amt.rwth-aachen.de/en/home.html" target="_blank" rel="noopener">Institute for Advanced Mining Technologies, RWTH Aachen</a>.</li>
-                      <li><strong>Mar'25</strong> — Started my Research Project at <a href="https://www.iaw.rwth-aachen.de/cms/~ieplw/iaw/" target="_blank" rel="noopener">Intitute of Industrial Engineering and Ergonomics, RWTH Aachen</a>.</li>
-                      <li><strong>Jan'24</strong> — Started working as a Student Research Assistant at <a href="https://www.mmp.rwth-aachen.de/cms/Mechatronics/~fwqq/Das-Lehr-und-Forschungsgebiet/lidx/1/" target="_blank" rel="noopener">Mechatronics and Mobile Propulsions Institute</a>.</li>
-                      <li><strong>Oct'23</strong> — Started MSc. Robotic Systems Engineering at <a href="https://www.rwth-aachen.de/go/id/a/?lidx=1" target="_blank" rel="noopener">RWTH Aachen University</a>.</li>
+                      <li><strong>Jan ’26</strong> — Working Student at <a href="https://www.dlr.de/en/rm" target="_blank" rel="noopener">German Aerospace Center (DLR)</a>.</li>
+                      <li><strong>Jul ’25</strong> — Student Research Assistant at <a href="https://www.amt.rwth-aachen.de/en/home.html" target="_blank" rel="noopener">Institute of Advanced Mining Technologies, RWTH Aachen</a>.</li>
+                      <li><strong>Mar ’25</strong> — Research Project at <a href="https://www.iaw.rwth-aachen.de/cms/~ieplw/iaw/" target="_blank" rel="noopener">Institute of Industrial Engineering and Ergonomics (IAW), RWTH Aachen</a>.</li>
+                      <li><strong>Jan ’24</strong> — Student Research Assistant at <a href="https://www.mmp.rwth-aachen.de/cms/Mechatronics/~fwqq/Das-Lehr-und-Forschungsgebiet/lidx/1/" target="_blank" rel="noopener">Mechatronics and Mobile Propulsion Institute (MMP), RWTH Aachen</a>.</li>
+                      <li><strong>Oct ’23</strong> — Started MSc Robotic Systems Engineering at <a href="https://www.rwth-aachen.de/go/id/a/?lidx=1" target="_blank" rel="noopener">RWTH Aachen University</a>.</li>
                     </ul>
                   </td>
                 </tr>
@@ -214,26 +225,27 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
               </tbody>
             </table>
 
-            <table style="width:100%;border:0;border-spacing:0 12px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <table class="entries">
               <tbody>
                 <tr class="entry-row">
-                  <td class="thumb exp" style="padding:16px;vertical-align:middle">
+                  <td class="thumb exp" style="padding:16px;">
                     <img src="images/institute_logos/DLR.jpeg" alt="DLR: Institute of Robotics and Mechatronics" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
-                    <papertitle>Working Student, DLR : Institute of Robotics and Mechatronics</papertitle>
+                    <papertitle>Working Student, DLR: Institute of Robotics and Mechatronics</papertitle>
                     <br />
                     <span style="color:var(--muted)">Jan 2026 – Present</span>
                     <ul>
-                      <li>Researching on Model based surface generation for offline trajectory planning of a SARA robot.</li>
-                      <li>Exploring text prompt based diffusion pointcloud models for Generative AI based surface generation.</li>
-                      <li>Evaluating the surface mesh quality for offline trajectory planner.</li>  
+                      <li>Model-based surface generation for offline trajectory planning of a SARA robot.</li>
+                      <li>Exploring text-prompt diffusion point cloud models for generative surface generation.</li>
+                      <li>Evaluating surface/mesh quality for downstream offline planning.</li>
                     </ul>
                   </td>
-                </tr>                
+                </tr>
+
                 <tr class="entry-row">
-                  <td class="thumb exp" style="padding:16px;vertical-align:middle">
-                    <img src="images/institute_logos/rwth_amt_logo.jpeg" alt="Advanced Mining Technologies" />
+                  <td class="thumb exp" style="padding:16px;">
+                    <img src="images/institute_logos/rwth_amt_logo.jpeg" alt="Institute for Advanced Mining Technologies" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
                     <papertitle>Student Research Assistant, Institute for Advanced Mining Technologies (RWTH Aachen)</papertitle>
@@ -241,16 +253,16 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                     <span style="color:var(--muted)">Jul 2025 – Jan 2026</span>
                     &nbsp;/&nbsp; <a href="documents/amt_zeugnis.pdf" target="_blank" rel="noopener">Experience Letter</a>
                     <ul>
-                      <li>Development of Stereo vision pipeline using NVIDIA Jetson Orion using the NVIDIA on USB Cameras Isaac ROS Image Pipeline.</li>
-                      <li>ROS2 Package Development, modification, testing, and debugging of the Stereo Vision Pipeline using ROS2, rqt, and Docker</li>
-                      <li>Processing, segmentation, and analysis of generated PointClouds.</li>
+                      <li>Stereo vision pipeline on NVIDIA Jetson Orin using Isaac ROS Image Pipeline (USB cameras).</li>
+                      <li>ROS2 package development, debugging, and Docker-based deployment (rqt tooling).</li>
+                      <li>Point cloud processing, segmentation, and analysis.</li>
                     </ul>
                   </td>
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb" style="padding:16px;vertical-align:middle">
-                    <img src="images/institute_logos/IAW_1.png" alt="Human Robot Collaboration Research Project" />
+                  <td class="thumb exp" style="padding:16px;">
+                    <img src="images/institute_logos/IAW_1.png" alt="Industrial Engineering and Ergonomics Institute (IAW)" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
                     <papertitle>Project Student, Industrial Engineering and Ergonomics Institute (RWTH Aachen)</papertitle>
@@ -264,8 +276,8 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb" style="padding:16px;vertical-align:middle">
-                    <img src="images/institute_logos/mmp_rwth_aachen_logo.jpeg" alt="RWTH" />
+                  <td class="thumb exp" style="padding:16px;">
+                    <img src="images/institute_logos/mmp_rwth_aachen_logo.jpeg" alt="Mechatronics and Mobile Propulsion Institute (MMP)" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
                     <papertitle>Student Research Assistant, Mechatronics and Mobile Propulsion Institute (RWTH Aachen)</papertitle>
@@ -273,15 +285,15 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                     <span style="color:var(--muted)">Jan 2024 – Sep 2024</span>
                     &nbsp;/&nbsp; <a href="documents/ashwin_hiwi_zeugnis.pdf" target="_blank" rel="noopener">Experience Letter</a>
                     <ul>
-                      <li>Worked on autonomous ship navigation and control allocation for USV configurations.</li>
-                      <li>Implemented trajectory planning in ROS/Gazebo with GPS-IMU sensor fusion.</li>
+                      <li>Autonomous ship navigation and control allocation for USV thruster configurations.</li>
+                      <li>Trajectory planning in ROS/Gazebo with GPS–IMU sensor fusion and synchronization.</li>
                     </ul>
                   </td>
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb exp" style="padding:16px;vertical-align:middle">
-                    <img src="images/institute_logos/mercedes.png" alt="Mercedes" />
+                  <td class="thumb exp" style="padding:16px;">
+                    <img src="images/institute_logos/mercedes.png" alt="Mercedes-Benz R&amp;D India" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
                     <papertitle>CAE Intern, Mercedes-Benz R&amp;D India</papertitle>
@@ -289,15 +301,15 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                     <span style="color:var(--muted)">Jan 2023 – Jul 2023</span>
                     &nbsp;/&nbsp; <a href="documents/mercedes_benz_reference.pdf" target="_blank" rel="noopener">Reference Letter</a>
                     <ul>
-                      <li>Developed finite-element simulation studies for BIW structures.</li>
-                      <li>Supported structural optimization and manufacturability analysis pipelines.</li>
+                      <li>Finite-element simulation studies for BIW structures.</li>
+                      <li>Structural optimization and manufacturability analysis support.</li>
                     </ul>
                   </td>
                 </tr>
               </tbody>
             </table>
 
-            <!-- All Projects -->
+            <!-- Projects -->
             <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
               <tbody>
                 <tr>
@@ -308,25 +320,22 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
               </tbody>
             </table>
 
-            <table style="width:100%;border:0;border-spacing:0 12px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <table class="entries">
               <tbody>
-
                 <tr class="entry-row">
-                  <td class="thumb proj" style="padding:16px;vertical-align:middle">
+                  <td class="thumb proj" style="padding:16px;">
                     <img src="images/project_images/pointcloud_scene.jpeg" alt="Mining Environment" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
-                    <papertitle>PointCloud Processing of Environment</papertitle>
-                    <br />
-                    <!-- <a href="https://github.com/AshwinC313/Sensor_simulation_of_humanoid_robot" target="_blank" rel="noopener">Code</a> -->
+                    <papertitle>Point Cloud Processing of Environment</papertitle>
                     <p style="margin-top:10px;">
-                      Add deliverables for this project
+                      Add deliverables for this project.
                     </p>
                   </td>
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb proj" style="padding:16px;vertical-align:middle">
+                  <td class="thumb proj" style="padding:16px;">
                     <img src="images/project_images/hardware_setup.jpg" alt="Humanoid sensors" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
@@ -340,7 +349,7 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb proj" style="padding:16px;vertical-align:middle">
+                  <td class="thumb proj" style="padding:16px;">
                     <img src="images/project_images/apf_dop_ss1.png" alt="APF project" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
@@ -348,13 +357,13 @@ Currently, I am a working student at the <a href="https://www.dlr.de/en/rm">Germ
                     <br />
                     <a href="https://github.com/AshwinC313/Design_Project_MEF376" target="_blank" rel="noopener">Code</a>
                     <p style="margin-top:10px;">
-                      Implemented formation-control and cooperative transport simulations in ROS/Python environments with stability-focused control design.
+                      Implemented formation-control and cooperative transport simulations in ROS/Python with stability-focused control design.
                     </p>
                   </td>
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb proj" style="padding:16px;vertical-align:middle">
+                  <td class="thumb proj" style="padding:16px;">
                     <img src="images/project_images/mars_rover.jpg" alt="Mars Rover" />
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
