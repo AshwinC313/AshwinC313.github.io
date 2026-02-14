@@ -233,24 +233,27 @@
     display:block;
   }
 
-  /* Projects: fixed frame ensures identical thumbnail size without distortion */
-  .thumb.proj{ width: 260px; }
-  .thumb.proj .thumb-frame{
-    width: 230px;
-    aspect-ratio: 23 / 15;  /* replaces fixed height for better responsiveness */
-    height: auto;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .thumb.proj .thumb-frame img,
-  .thumb.proj .thumb-frame video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;       /* crops, never stretches */
-    object-position: center;
-    display: block;
-    border-radius: 0;
-  }
+  /* Projects: fixed frame, but NO CROPPING (no “zoom”) */
+.thumb.proj{ width: 260px; }
+.thumb.proj .thumb-frame{
+  width: 230px;
+  aspect-ratio: 23 / 15;
+  height: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f3f4f6;     /* shows as letterbox bars when needed */
+  border: 1px solid var(--rule);
+}
+/* Show the entire media, never crop, never distort */
+.thumb.proj .thumb-frame img,
+.thumb.proj .thumb-frame video{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      /* key change: contain instead of cover */
+  object-position: center;
+  display: block;
+  background: transparent;
+}
 
   /* Page wrapper */
   .page{
