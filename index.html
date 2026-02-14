@@ -99,11 +99,19 @@
     }
 
     /* Project thumbs (bigger) */
-    .thumb.proj{ width: 260px; }
-    .thumb.proj img{
-      width: 230px;
-      height: auto;
-      border-radius: 10px;
+    .thumb.proj .thumb-frame{
+        width: 260px;
+        height: 150px;
+        border-radius: 10px;
+        overflow: hidden; 
+      }
+
+    .thumb.proj .thumb-frame img,
+    .thumb.proj .thumb-frame video{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       display:block;
     }
 
@@ -324,26 +332,32 @@
               <tbody>
                 <tr class="entry-row">
                   <td class="thumb proj" style="padding:16px;">
-                    <img src="images/project_images/pointcloud_scene.jpeg" alt="Mining Environment" />
+                    <div class="thumb-frame">                    
+                      <img src="images/project_images/pointcloud_scene.jpeg" alt="Mining Environment" />
+                    </div>
                   </td>
+                  
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
                     <papertitle>Point Cloud Processing of Environment</papertitle>
                     <p style="margin-top:10px;">
                       Add deliverables for this project.
-                    </p>
+                    </p>  
                   </td>
                 </tr>
+
                 <tr class="entry-row">
                   <td class="thumb proj" style="padding:16px;vertical-align:middle">
-                    <video
-                      autoplay
-                      muted
-                      loop
-                      playsinline
-                      preload="metadata"
-                      style="width:230px;height:auto;border-radius:10px;display:block;">
-                    <source src="images/project_images/acdc_env_planning.mp4" type="video/mp4">
-                    </video>
+                    <div class="thumb-frame">
+                      <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        preload="metadata"
+                        style="width:230px;height:auto;border-radius:10px;display:block;">
+                      <source src="images/project_images/acdc_env_planning.mp4" type="video/mp4">
+                      </video>
+                    </div>
                   </td>
                     
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
@@ -353,18 +367,20 @@
                     </p>
                   </td>
                 </tr>
-                
+
                 <tr class="entry-row">
                   <td class="thumb proj" style="padding:16px;">
-                    <video
-                      autoplay
-                      muted
-                      loop
-                      playsinline
-                      preload="metadata"
-                      style="width:230px;height:auto;border-radius:10px;display:block;">
-                    <source src="images/project_images/teleop_grinding_vid.mp4" type="video/mp4">
-                    </video>
+                    <div class="thumb-frame">
+                      <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        preload="metadata"
+                        style="width:230px;height:auto;border-radius:10px;display:block;">
+                      <source src="images/project_images/teleop_grinding_vid.mp4" type="video/mp4">
+                      </video>
+                    </div>
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
                     <papertitle> VR-based Interactive Demonstrator for Teleoperation in Human-Robot Collaborative Applications</papertitle>
@@ -378,15 +394,17 @@
 
                 <tr class="entry-row">
                   <td class="thumb proj" style="padding:16px;">
-                    <video
-                      autoplay
-                      muted
-                      loop
-                      playsinline
-                      preload="metadata"
-                      style="width:230px;height:auto;border-radius:10px;display:block;">
-                      <source src="images/project_images/Ros_course_demo.mp4" type="video/mp4">
-                    </video>
+                    <div class="thumb-frame"></div>
+                      <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        preload="metadata"
+                        style="width:230px;height:auto;border-radius:10px;display:block;">
+                        <source src="images/project_images/Ros_course_demo.mp4" type="video/mp4">
+                      </video>
+                    </div>
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
                     <papertitle>AR Tag guided Trajectory Planner for Robot Welding</papertitle>
