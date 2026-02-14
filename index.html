@@ -106,7 +106,14 @@
         overflow: hidden; 
       }
 
-    .thumb.proj .thumb-frame img,
+    .thumb.proj .thumb-frame img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display:block;
+      }
+
     .thumb.proj .thumb-frame video{
       width: 100%;
       height: 100%;
@@ -418,7 +425,9 @@
 
                 <tr class="entry-row">
                   <td class="thumb proj" style="padding:16px;">
-                    <img src="images/project_images/hardware_setup.jpg" alt="Humanoid sensors" />
+                    <div class="thumb-frame">
+                      <img src="images/project_images/hardware_setup.jpg" alt="Humanoid sensors" />
+                    </div>
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
                     <papertitle>Sensor Simulation of Humanoid Robot</papertitle>
@@ -432,7 +441,9 @@
 
                 <tr class="entry-row">
                   <td class="thumb proj" style="padding:16px;">
-                    <img src="images/project_images/apf_dop_ss1.png" alt="APF project" />
+                    <div class="thumb-frame">
+                      <img src="images/project_images/apf_dop_ss1.png" alt="APF project" />
+                    </div>
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
                     <papertitle>Multi-Agent Navigation using Artificial Potential Functions</papertitle>
@@ -446,7 +457,9 @@
 
                 <tr class="entry-row">
                   <td class="thumb proj" style="padding:16px;">
-                    <img src="images/project_images/mars_rover.jpg" alt="Mars Rover" />
+                    <div class="thumb-frame">
+                      <img src="images/project_images/mars_rover.jpg" alt="Mars Rover" />
+                    </div>
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
                     <papertitle>Project Kratos – Mars Rover</papertitle>
