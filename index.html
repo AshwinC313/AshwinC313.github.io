@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
+  <!-- <style>
     :root{
       --bg: #ffffff;
       --text: #111827;
@@ -140,7 +140,188 @@
       .thumb.proj{ width: 200px; }
       .thumb.proj .thumb-frame{ width: 170px; height: 115px; }
     }
-  </style>
+  </style> -->
+  <style>
+  :root{
+    --bg: #ffffff;
+    --text: #111827;
+    --muted: #4b5563;
+    --link: #1a56db;
+    --link-hover: #b45309;
+    --rule: #e5e7eb;
+  }
+
+  html, body { background: var(--bg); }
+  body{
+    margin:0;
+    color: var(--text);
+    font-family: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Media safety: never distort */
+  img, video{
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Jon Barron-like custom tags */
+  name{
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+  }
+  heading{
+    display:block;
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 6px 0 10px;
+    padding-top: 6px;
+    border-top: 1px solid var(--rule);
+  }
+  papertitle{ font-weight: 700; }
+
+  p{ margin: 0 0 12px; }
+  a{ color: var(--link); text-decoration: none; }
+  a:hover{ color: var(--link-hover); }
+  strong{ font-weight: 700; }
+
+  table{ border-collapse: separate; }
+  img{ border: 0; }
+
+  .top-links a{ font-weight: 600; }
+
+  ul{ margin: 10px 0 0 18px; padding:0; }
+  li{ margin: 6px 0; }
+
+  .news ul{ margin-top: 8px; }
+  .news li{ margin: 5px 0; color: var(--text); }
+
+  /* Entry rows */
+  .entry-row{
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    background: #fff;
+  }
+  .entry-cell{ background: #fff; }
+
+  /* Stabilize table sizing on desktop/tablet */
+  .entries{
+    width:100%;
+    table-layout: fixed;
+    border:0;
+    border-spacing:0 12px;
+    border-collapse:separate;
+    margin-right:auto;
+    margin-left:auto;
+  }
+
+  /* Thumb cells */
+  .thumb{ vertical-align: middle; }
+
+  /* Experience thumbs */
+  .thumb.exp{ width: 170px; }
+  .thumb.exp img{
+    width: 140px;
+    height: auto;
+    border-radius: 10px;
+    display:block;
+  }
+
+  /* Projects: fixed frame ensures identical thumbnail size without distortion */
+  .thumb.proj{ width: 260px; }
+  .thumb.proj .thumb-frame{
+    width: 230px;
+    aspect-ratio: 23 / 15;  /* replaces fixed height for better responsiveness */
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .thumb.proj .thumb-frame img,
+  .thumb.proj .thumb-frame video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* crops, never stretches */
+    object-position: center;
+    display: block;
+    border-radius: 0;
+  }
+
+  /* Page wrapper */
+  .page{
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 18px 14px 54px;
+  }
+
+  .footer-note{
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* Tablet */
+  @media (max-width: 720px){
+    name{ font-size: 30px; }
+    .page{ padding: 14px 10px 42px; }
+
+    .thumb.exp{ width: 140px; }
+    .thumb.exp img{ width: 115px; }
+
+    .thumb.proj{ width: 210px; }
+    .thumb.proj .thumb-frame{
+      width: 190px;
+      aspect-ratio: 23 / 15;
+    }
+  }
+
+  /* Phone: stack thumbnail above text (no cramped two-column table) */
+  @media (max-width: 620px){
+    /* Stack each row as a card */
+    .entries tr{
+      display: block;
+      margin-bottom: 12px;
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    /* Remove row-level border since card has border now */
+    .entry-row{ border: 0; border-radius: 0; }
+
+    /* Make cells block-level */
+    .entries td{
+      display: block;
+      width: 100% !important;
+      padding: 12px !important;
+    }
+
+    /* Center thumbnails on mobile */
+    .thumb{ text-align: center; }
+    .thumb.exp, .thumb.proj{ width: 100% !important; }
+
+    /* Responsive thumb sizing on phones */
+    .thumb.exp img{
+      width: min(140px, 42vw);
+      margin: 0 auto;
+    }
+
+    .thumb.proj .thumb-frame{
+      width: min(92vw, 360px);
+      aspect-ratio: 23 / 15;
+      margin: 0 auto;
+    }
+
+    /* Tighten list indent a bit for narrow screens */
+    ul{ margin-left: 16px; }
+  }
+</style>
 </head>
 
 <body>
