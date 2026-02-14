@@ -7,7 +7,7 @@
   <meta name="author" content="Ashwin Chakravartula" />
   <link rel="icon" type="image/jpeg" href="images/profile_pic/pic_1.jpeg"/>
 
-  <!-- Fonts (you were referencing these but not loading them) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
       text-rendering: optimizeLegibility;
     }
 
-    /* Custom tag styling (Jon Barron-like) */
+    /* Jon Barron-like custom tags */
     name{
       font-family: "Source Serif 4", Georgia, serif;
       font-size: 34px;
@@ -75,7 +75,7 @@
     }
     .entry-cell{ background: #fff; }
 
-    /* IMPORTANT: stabilize table sizing so no giant gaps */
+    /* Stabilize table sizing */
     .entries{
       width:100%;
       table-layout: fixed;
@@ -86,10 +86,10 @@
       margin-left:auto;
     }
 
-    /* Thumb sizing: fixed cell widths (no % widths) */
+    /* Thumb cells */
     .thumb{ vertical-align: middle; }
 
-    /* Experience thumbs (smaller) */
+    /* Experience thumbs */
     .thumb.exp{ width: 170px; }
     .thumb.exp img{
       width: 140px;
@@ -98,28 +98,22 @@
       display:block;
     }
 
-    /* Project thumbs (bigger) */
+    /* Project thumbs: ALL SAME SIZE via fixed frame */
+    .thumb.proj{ width: 260px; }
     .thumb.proj .thumb-frame{
-        width: 260px;
-        height: 150px;
-        border-radius: 10px;
-        overflow: hidden; 
-      }
-
-    .thumb.proj .thumb-frame img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        display:block;
-      }
-
+      width: 230px;
+      height: 150px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .thumb.proj .thumb-frame img,
     .thumb.proj .thumb-frame video{
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
-      display:block;
+      display: block;
+      border-radius: 0; /* frame already has radius */
     }
 
     /* Page wrapper */
@@ -144,7 +138,7 @@
       .thumb.exp img{ width: 115px; }
 
       .thumb.proj{ width: 200px; }
-      .thumb.proj img{ width: 170px; }
+      .thumb.proj .thumb-frame{ width: 170px; height: 115px; }
     }
   </style>
 </head>
@@ -184,25 +178,11 @@
 
                   <td style="padding:2.5%;width:37%;max-width:37%;vertical-align:middle;text-align:right;">
                     <a href="images/profile_pic/pic_1.jpeg" style="display:inline-block;">
-                      <div style="
-                        width:210px;
-                        height:210px;
-                        border-radius:50%;
-                        overflow:hidden;
-                        display:inline-block;
-                      ">
+                      <div style="width:210px;height:210px;border-radius:50%;overflow:hidden;display:inline-block;">
                         <img
                           src="images/profile_pic/pic_1.jpeg"
                           alt="profile photo"
-                          style="
-                            width:100%;
-                            height:100%;
-                            object-fit:cover;
-                            object-position:center 70%;
-                            transform:scale(1.5);
-                            transform-origin:center;
-                            display:block;
-                          "
+                          style="width:100%;height:100%;object-fit:cover;object-position:center 70%;transform:scale(1.5);transform-origin:center;display:block;"
                         />
                       </div>
                     </a>
@@ -339,87 +319,59 @@
               <tbody>
                 <tr class="entry-row">
                   <td class="thumb proj" style="padding:16px;">
-                    <div class="thumb-frame">                    
+                    <div class="thumb-frame">
                       <img src="images/project_images/pointcloud_scene.jpeg" alt="Mining Environment" />
                     </div>
                   </td>
-                  
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
                     <papertitle>Point Cloud Processing of Environment</papertitle>
-                    <p style="margin-top:10px;">
-                      Add deliverables for this project.
-                    </p>  
+                    <p style="margin-top:10px;">Add deliverables for this project.</p>
                   </td>
                 </tr>
 
                 <tr class="entry-row">
-                  <td class="thumb proj" style="padding:16px;vertical-align:middle">
+                  <td class="thumb proj" style="padding:16px;">
                     <div class="thumb-frame">
-                      <video
-                        autoplay
-                        muted
-                        loop
-                        playsinline
-                        preload="metadata"
-                        style="width:230px;height:auto;border-radius:10px;display:block;">
-                      <source src="images/project_images/acdc_env_planning.mp4" type="video/mp4">
+                      <video autoplay muted loop playsinline preload="metadata">
+                        <source src="images/project_images/acdc_env_planning.mp4" type="video/mp4">
                       </video>
                     </div>
                   </td>
-                    
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
                     <papertitle>Trajectory Planner for Autonomous Vehicles</papertitle>
-                    <p style="margin-top:10px;">
-                      Add deliverables for this project.
-                    </p>
+                    <p style="margin-top:10px;">Add deliverables for this project.</p>
                   </td>
                 </tr>
 
                 <tr class="entry-row">
                   <td class="thumb proj" style="padding:16px;">
                     <div class="thumb-frame">
-                      <video
-                        autoplay
-                        muted
-                        loop
-                        playsinline
-                        preload="metadata"
-                        style="width:230px;height:auto;border-radius:10px;display:block;">
-                      <source src="images/project_images/teleop_grinding_vid.mp4" type="video/mp4">
+                      <video autoplay muted loop playsinline preload="metadata">
+                        <source src="images/project_images/teleop_grinding_vid.mp4" type="video/mp4">
                       </video>
                     </div>
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
-                    <papertitle> VR-based Interactive Demonstrator for Teleoperation in Human-Robot Collaborative Applications</papertitle>
+                    <papertitle>VR-based Interactive Demonstrator for Teleoperation in Human-Robot Collaborative Applications</papertitle>
                     <br />
-                    <a href="" target="_blank" rel="noopener">Code</a>
-                    <p style="margin-top:10px;">
-                      Enter the Research Project deliverables
-                    </p>
+                    <a href="#" target="_blank" rel="noopener">Code</a>
+                    <p style="margin-top:10px;">Enter the Research Project deliverables.</p>
                   </td>
                 </tr>
 
                 <tr class="entry-row">
                   <td class="thumb proj" style="padding:16px;">
-                    <div class="thumb-frame"></div>
-                      <video
-                        autoplay
-                        muted
-                        loop
-                        playsinline
-                        preload="metadata"
-                        style="width:230px;height:auto;border-radius:10px;display:block;">
+                    <div class="thumb-frame">
+                      <video autoplay muted loop playsinline preload="metadata">
                         <source src="images/project_images/Ros_course_demo.mp4" type="video/mp4">
                       </video>
                     </div>
                   </td>
                   <td class="entry-cell" style="padding:14px 14px 14px 0;vertical-align:middle">
-                    <papertitle>AR Tag guided Trajectory Planner for Robot Welding</papertitle>
+                    <papertitle>AR Tag Guided Trajectory Planner for Robot Welding</papertitle>
                     <br />
-                    <a href="" target="_blank" rel="noopener">Code</a>
-                    <p style="margin-top:10px;">
-                      Enter deliverable for robot trajectory planner for ROS course project.
-                    </p>
+                    <a href="#" target="_blank" rel="noopener">Code</a>
+                    <p style="margin-top:10px;">Enter deliverable for robot trajectory planner for ROS course project.</p>
                   </td>
                 </tr>
 
@@ -469,7 +421,7 @@
                       Designed and built subsystems for a six-wheel Mars rover platform that ranked top in international rover competitions.
                     </p>
                   </td>
-                </tr> 
+                </tr>
               </tbody>
             </table>
 
